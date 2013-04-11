@@ -1,0 +1,7 @@
+ul.unstyled {
+    list-style: none;
+}
+
+.done-true {
+    text-decoration: line-through;
+}

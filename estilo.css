@@ -7,7 +7,7 @@ legend { display: none }
 	margin: 1% auto;
 	overflow: hidden;
 }
-	
+
 
 h1 { 
 	font: 25px 'Open Sans', Arial; 
@@ -51,18 +51,18 @@ h1 {
 .campos input[type="button"] { 
 	background: #2679A5; 
 	border-radius: 0 6px 6px 0;
-    color: #FFF;
-    cursor: pointer;
-    height: 34px;
-    font: 15px 'Open Sans',Arial;
-    padding: 2px 13px 6px;
-    width: 150px;
+	color: #FFF;
+	cursor: pointer;
+	height: 34px;
+	font: 15px 'Open Sans',Arial;
+	padding: 2px 13px 6px;
+	width: 150px;
 
-    -webkit-transition: background .2s ease-in;
-    -moz-transition: background .2s ease-in;
-    -ms-transition: background .2s ease-in;
-    -o-transition: background .2s ease-in;
-    transition: background .2s ease-in;
+	-webkit-transition: background .2s ease-in;
+	-moz-transition: background .2s ease-in;
+	-ms-transition: background .2s ease-in;
+	-o-transition: background .2s ease-in;
+	transition: background .2s ease-in;
 }
 
 .campos input[type="button"]:hover { background: #12587C }
@@ -77,19 +77,19 @@ h1 {
 input[type="submit"] {
 	background: #2679A5; 
 	border-radius: 6px;
-    color: #FFF;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
-    font: 20px 'Open Sans',Arial;
-    padding: 7.5px 15px;
-    width: 250px;
+	color: #FFF;
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+	font: 20px 'Open Sans',Arial;
+	padding: 7.5px 15px;
+	width: 250px;
 
-    -webkit-transition: background .2s ease-in;
-    -moz-transition: background .2s ease-in;
-    -ms-transition: background .2s ease-in;
-    -o-transition: background .2s ease-in;
-    transition: background .2s ease-in;
+	-webkit-transition: background .2s ease-in;
+	-moz-transition: background .2s ease-in;
+	-ms-transition: background .2s ease-in;
+	-o-transition: background .2s ease-in;
+	transition: background .2s ease-in;
 }
 
 input[type="submit"]:hover { background: #12587C }
