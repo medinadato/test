@@ -10,5 +10,8 @@ $resid_count = $data_res['res_id']+1;
 echo "<br>Result: " . $resid_count;
 
 // insert result to table
+$sql_result = "INSERT INTO result (res_id, r_score, s_id, i_id) VALUES (null, '" . $correct . "',  '" . $id . "',  '" . $ins_id . "')";
+
+// insert result to table
 $sql_result = "INSERT INTO test.result (res_id, r_score, s_id, i_id) VALUES (null, '1',  '1',  '1')";
 mysql_query($sql_result) or die ("Error: " . mysql_error());
