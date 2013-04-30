@@ -120,3 +120,11 @@ $user->setRegistered(false);
 $user->setAdmin(true);
 
 echo $user;  // outputs: User [REGISTERED ACTIVE MEMBER ADMIN]
+
+
+var_dump(1234 ^ 0); // int(1234)
+var_dump(1234 ^ ''); // int(1234)
+var_dump(1234 ^ null); // int(1234)
+var_dump('hello world' ^ 0); // int(0)
+var_dump(1 ^ ~0); // int(1)
+var_dump( (int) 'hello world' );
