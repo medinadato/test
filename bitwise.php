@@ -1,6 +1,6 @@
 <?php
 
-$user_perms = 7; //             |0|0|0|0|0|1|1|1|
+$user_perms = 0; //             |0|0|0|0|0|1|1|1|
 
 $perms = array(
         'can_post' => 1,	//  |0|0|0|0|0|1|1|1| 
@@ -10,25 +10,22 @@ $perms = array(
 );
 
 
-//$user_perms = $perms['can_post'] | $perms['can_comment'] | $perms['can_edit'];
-
-
 //var_dump($user_perms);
 
 if ($user_perms & $perms['can_post']) {
-        echo 'He/She can post <br />';
+        echo 'has permission to post <br />';
 }
 
 if ($user_perms & $perms['can_comment']) {
-        echo 'He/She can comment <br />';
+        echo 'has permission to comment <br />';
 }
 
 if ($user_perms & $perms['can_edit']) {
-        echo 'He/She can edit  <br />';
+        echo 'has permission to edit <br />';
 }
 
 if ($user_perms & $perms['can_delete']) {
-        echo 'He/She can delete  <br />';
+        echo 'has permission to delete  <br />';
 }
 
 // or
@@ -41,7 +38,7 @@ if ($user_perms ^ $perms['can_delete']) {
         echo 'He/She can delete  <br />';
 }
 
-// I need to check about precedence
+// I need to check about precedence (What is the order of the comparation
 if ($user_perms & 1 | 2 & 4) {
 	echo 'ouuu  <br />';
 }
