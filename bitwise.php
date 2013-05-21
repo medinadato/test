@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 1);
 
 $user_perms = 0; //             |0|0|0|0|0|1|1|1|
 
@@ -58,3 +59,14 @@ echo '<br />';
 echo 8 >> 1; // each step means "divided by two" ( = 4 )
 echo '<br />';
 echo 5 << 2; // each step means "multiply by two" ( = 20 )
+echo '<br />';
+echo 7 ^ 2; // it results 5
+echo '<br />';
+echo 7 & 2; // it results 2
+echo '<br />';
+echo (7 | 2); // it results 7
+echo '<br />';
+echo (7 | 2) >> 1; // it results 3
+
+error_log("Big trouble, we're all out of FOOs!", 42,
+               0);
