@@ -9,7 +9,7 @@ $test_grid = new \Demo\Grid\Test;
 <html>
     <head>Mgrid Example</head>
     <body>
-        
+
 <?php
 // show the grid
 $test_grid->render();
