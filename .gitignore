@@ -1,0 +1,13 @@
+
+# Directories #
+###############
+
+app/vendor/
+
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
