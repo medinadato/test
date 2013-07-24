@@ -1,0 +1,55 @@
+<?php
+$pager = $this->grid->getPager();
+$request = $this->grid->getRequest();
+
+$prevParams = array('page' => $pager->getPreviousPage());
+$nextParams = array('page' => $pager->getNextPage());
+
+$prevUrl = $this->url($prevParams);
+$nextUrl = $this->url($nextParams);
+
+if (isset($_SERVER['QUERY_STRING'])) {
+    $prevUrl.= '?' . $_SERVER['QUERY_STRING'];
+    $nextUrl.= '?' . $_SERVER['QUERY_STRING'];
+}
+?>
+<div class="gPager">
+    <?php
+    if ($pager->haveToPaginate()) :
+        $leftOff = ($pager->getPreviousPage() == 1) ? '_off' : '';
+        $rightOff = ($pager->getNextPage() == $pager->getTotalPages()) ? '_off' : '';
+        ?>
+        <span><?php echo $this->translate('Page') ?></span>
+        <a href="<?php echo $prevUrl; ?>"><img src="<?php echo $this->baseUrl('img/admin/pager_arrow_left' . $leftOff . '.gif') ?>" alt="&lt;" /></a>
+
+        <select name="page" class="gPagerFormSelect" style="text-align: center;">
+            <?php
+            for ($i = 1; $i <= $pager->getTotalPages(); $i++):
+                //monto a url dinamicamente
+                $url = $this->url(array('page' => $i)) . '?' . $_SERVER['QUERY_STRING'];
+                ?>
+                <option value="<?php echo $url ?>" <?php
+        if ($i == $pager->getPage()) :
+            echo 'selected="selected"';
+        endif;
+                ?>><?php echo $i; ?>
+                </option>
+            <?php endfor; ?>
+        </select>
+
+        <a href="<?php echo $nextUrl; ?>"><img src="<?php echo $this->baseUrl('img/admin/pager_arrow_right' . $rightOff . '.gif'); ?>" alt="&lt;" /></a>
+        <span><?php echo $this->translate('of') . ' ' . $pager->getTotalPages() . ' ' . $this->translate('pages') ?></span>
+
+<!--        <span class="massDelimiter">|</span>
+        <span><?php echo $this->translate('View') ?></span>
+
+        <select name="maxPerPage">
+            <option value="20">20</option>
+            <option value="30">30</option>
+        </select>
+
+        <span><?php echo $this->translate('per page') ?></span>
+        <span class="massDelimiter">|</span>-->
+    <?php endif; ?>
+    <span><?php echo $this->translate('Total of') . ' ' . $pager->getNumResults() . ' ' . $this->translate('register(s) found') ?>.</span>
+</div>

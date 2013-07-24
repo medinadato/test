@@ -6,18 +6,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/medinadato/mgrid.git",
-            "reference": "8de74a21babe1dde2dfa38c3878193b82037b690"
+            "reference": "99faf96839c3043986408e6275cb818b94c319d7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/medinadato/mgrid/zipball/8de74a21babe1dde2dfa38c3878193b82037b690",
-            "reference": "8de74a21babe1dde2dfa38c3878193b82037b690",
+            "url": "https://api.github.com/repos/medinadato/mgrid/zipball/99faf96839c3043986408e6275cb818b94c319d7",
+            "reference": "99faf96839c3043986408e6275cb818b94c319d7",
             "shasum": ""
         },
         "require": {
             "php": ">=5.0.0"
         },
-        "time": "2013-07-22 11:56:56",
+        "time": "2013-07-24 04:59:05",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -41,6 +41,57 @@
         "homepage": "http://github.com/medinadato/mgrid",
         "keywords": [
             "grid"
+        ]
+    },
+    {
+        "name": "twig/twig",
+        "version": "v1.13.1",
+        "version_normalized": "1.13.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fabpot/Twig.git",
+            "reference": "v1.13.1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fabpot/Twig/zipball/v1.13.1",
+            "reference": "v1.13.1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "time": "2013-06-06 06:06:01",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.13-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com"
+            }
+        ],
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "http://twig.sensiolabs.org",
+        "keywords": [
+            "templating"
         ]
     }
 ]

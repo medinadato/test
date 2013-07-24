@@ -1,5 +1,6 @@
 {
     "require": {
-        "mdn/mgrid": "dev-master"
+        "mdn/mgrid": "dev-master",
+        "twig/twig": "1.*"
     }
 }
