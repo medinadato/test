@@ -14,7 +14,7 @@ class Test extends \Mgrid\Grid
     public function init()
     {
         // data source for tests
-        $data_source = $this->getDataSource();
+        $data_source = $this->getMockResultSet();
 
         // load the grid
         $this->setSource(new \Mgrid\Source\ArraySource($data_source))
@@ -68,7 +68,7 @@ class Test extends \Mgrid\Grid
      * 
      * @return array
      */
-    private function getDataSource()
+    private function getMockResultSet()
     {
         return array(
             0 => array(
