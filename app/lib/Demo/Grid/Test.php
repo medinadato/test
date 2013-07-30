@@ -63,8 +63,8 @@ class Test extends \Mgrid\Grid
                     'pkIndex' => 'id',
                     'cssClass' => 'del',
                 ))
-                ->setHeaders(true)
-                ->setOrdering(true);
+                ->setHeaders(true);
+//                ->setOrdering(false);
     }
 
     /**
@@ -99,6 +99,14 @@ class Test extends \Mgrid\Grid
                 'personName' => 'Marcelo Raposo',
                 'username' => 'raposo@mdnsolutions.com',
                 'birthday' => '1968-09-11',
+            ),
+            8 => array(
+                'id' => 25,
+                'companyName' => 'Company 25',
+                'roleName' => 'Employee',
+                'personName' => 'Anacleto',
+                'username' => 'anacleto@mdnsolutions.com',
+                'birthday' => '1991-09-01',
             ),
         );
     }

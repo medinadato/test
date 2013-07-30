@@ -8,6 +8,7 @@ $test_grid = new \Demo\Grid\Test;
 
 <html>
     <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
         <title>Mgrid Example</title>
         <style>
             body { font-family: 'PT Sans', sans-serif, "Trebuchet MS"; }
