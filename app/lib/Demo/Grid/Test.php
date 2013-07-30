@@ -20,6 +20,10 @@ class Test extends \Mgrid\Grid
         $this->setSource(new \Mgrid\Source\ArraySource($data_source))
                 ->setId('demo-test-grid')
                 ->addColumn(array(
+                    'label' => 'Cod.',
+                    'index' => 'id',
+                ))
+                ->addColumn(array(
                     'label' => 'Company',
                     'index' => 'companyName',
                 ))
@@ -30,12 +34,12 @@ class Test extends \Mgrid\Grid
                 ->addColumn(array(
                     'label' => 'Name',
                     'index' => 'personName',
-//                    'filter' => array(
-//                        'render' => array(
-//                            'type' => 'text',
-//                            'condition' => array('match' => array('fulltext')),
-//                        )
-//                    ),
+                    'filter' => array(
+                        'render' => array(
+                            'type' => 'text',
+                            'condition' => array('match' => array('fulltext')),
+                        )
+                    ),
                 ))
                 ->addColumn(array(
                     'label' => 'Username',
@@ -59,7 +63,8 @@ class Test extends \Mgrid\Grid
                     'pkIndex' => 'id',
                     'cssClass' => 'del',
                 ))
-                ->setHasOrdering(true);
+                ->setHeaders(true)
+                ->setOrdering(true);
     }
 
     /**
@@ -86,6 +91,14 @@ class Test extends \Mgrid\Grid
                 'personName' => 'Mary Doe',
                 'username' => 'marydue@mdnsolutions.com',
                 'birthday' => '1955-06-10',
+            ),
+            7 => array(
+                'id' => 18,
+                'companyName' => 'Company 18',
+                'roleName' => 'Empresario',
+                'personName' => 'Marcelo Raposo',
+                'username' => 'raposo@mdnsolutions.com',
+                'birthday' => '1968-09-11',
             ),
         );
     }
