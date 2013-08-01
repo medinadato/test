@@ -1,12 +1,32 @@
 <?php
 
+/*
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * This software consists of voluntary contributions made by many individuals
+ * and is licensed under the LGPL. For more information, see
+ * <http://mgrid.mdnsolutions.com/license>.
+ */
+
 namespace Mgrid\Column\Filter\Render;
 
 /**
- * Description of Text
+ * Number filter type
  *
- * @author Renato Medina <medinadato@gmail.com>
+ * @since       0.0.1
+ * @author      Renato Medina <medinadato@gmail.com>
  */
+
 abstract class ARender 
 {
     /**
@@ -114,6 +134,10 @@ abstract class ARender
         return $this;
     }
 
+    /**
+     * 
+     * @param type $attributes
+     */
     public function setAttributes($attributes)
     {
         //valores padroes para o Render
@@ -124,11 +148,38 @@ abstract class ARender
         $this->attributes = $attributes;
     }
     
+    /**
+     * 
+     * @param string $html
+     * @param array $attributes
+     * @return string
+     */
+    protected function generateHtmlOfAttributes($html = '', array $attributes = array())
+    {
+        foreach($attributes as $name => $value) {
+            if(is_array($value)) {
+                $value = implode(' ', $value);
+            }
+            
+            $html .= ' ' . $name . '="' . $value . '" ';
+        }
+        
+        return $html;
+    }
+    
+    /**
+     * 
+     * @return type
+     */
     public function getCondition()
     {
         return $this->condition;
     }
 
+    /**
+     * 
+     * @param type $condition
+     */
     public function setCondition($condition)
     {
         $this->condition = $condition;
