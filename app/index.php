@@ -1,9 +1,17 @@
 <?php
 // load bootstrap
 require __DIR__ . '/bootstrap.php';
-
+//echo "<pre>";
 // load mgrid example
 $test_grid = new \Demo\Grid\Test;
+
+
+//unset($_SESSION);
+//echo "SESSION:
+//    ";
+//var_export($_SESSION);        
+//echo "</pre>";
+//session_destroy();
 ?>
 
 <html>
