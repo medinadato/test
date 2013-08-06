@@ -5,7 +5,6 @@ require __DIR__ . '/bootstrap.php';
 // load mgrid example
 $test_grid = new \Demo\Grid\Test;
 
-
 //unset($_SESSION);
 //echo "SESSION:
 //    ";
@@ -34,9 +33,10 @@ $test_grid = new \Demo\Grid\Test;
  *  ln -s /usr/share/nginx/www/test/app/vendor/mdn/mgrid/lib/Mgrid/templates/default/assets /usr/share/nginx/www/test/app/
  *  
  * Symlink for IMac
- *     ln -s /var/www/mgrid /var/www/test/app/vendor/mdn/
- *      ln -s /var/www/test/app/vendor/mdn/mgrid/lib/Mgrid/templates/default/assets /var/www/test/app/
- *      
+ *  ln -s /var/www/mgrid /var/www/test/app/vendor/mdn/
+ *  rm -rf /var/www/test/app/vendor/mdn/mgrid
+ *  ln -s /var/www/test/app/vendor/mdn/mgrid/lib/Mgrid/templates/default/assets /var/www/test/app/
+ *  rm -rf /var/www/test/app/assets
  */
 
 // show the grid

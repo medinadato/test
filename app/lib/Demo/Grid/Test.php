@@ -107,6 +107,13 @@ class Test extends \Mgrid\Grid
 //                    },
                 ))
                 ->addAction(array(
+                    'label' => 'Details',
+                    'controllerName' => 'access_user',
+                    'actionName' => 'detail',
+                    'pkIndex' => 'id',
+                    'cssClass' => 'view',
+                ))
+                ->addAction(array(
                     'label' => 'Edit',
                     'controllerName' => 'access_user',
                     'actionName' => 'edit',
@@ -168,10 +175,10 @@ class Test extends \Mgrid\Grid
             ),
             3 => array(
                 'id' => 4,
-                'companyName' => 'Company 02',
+                'companyName' => 'Butter Factory',
                 'roleName' => 'Role 02',
-                'personName' => 'Mary Doe',
-                'username' => 'marydue@mdnsolutions.com',
+                'personName' => 'Dorival Manteiga',
+                'username' => 'manteiga@mdnsolutions.com',
                 'birthday' => '1955-06-10',
                 'lastAccess' => '2012-08-09 12:15:13',
                 'balance' => '82458.12',
@@ -180,9 +187,9 @@ class Test extends \Mgrid\Grid
             4 => array(
                 'id' => 5,
                 'companyName' => 'Company 02',
-                'roleName' => 'Role 02',
-                'personName' => 'Mary Doe',
-                'username' => 'marydue@mdnsolutions.com',
+                'roleName' => 'Manager',
+                'personName' => 'Roman Duncan',
+                'username' => 'rduncan@mdnsolutions.com',
                 'birthday' => '1955-06-10',
                 'lastAccess' => '2012-08-09 12:15:13',
                 'balance' => '82458.12',
