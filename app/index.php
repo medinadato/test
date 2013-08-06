@@ -25,13 +25,18 @@ $test_grid = new \Demo\Grid\Test;
     <body>
 <?php
 /**
- * don't forget to create a symlink 
- *      ln -s /var/www/mgrid /var/www/test/app/vendor/mdn/
- *      ln -s /usr/share/nginx/www/mgrid /usr/share/nginx/www/test/app/vendor/mdn/
+ * 
+ * 
+ * Symlink for Ubuntu
+ *  rm -rf /usr/share/nginx/www/test/app/vendor/mdn/mgrid
+ *  ln -s /usr/share/nginx/www/mgrid /usr/share/nginx/www/test/app/vendor/mdn/
+ *  rm -rf /usr/share/nginx/www/test/app/assets
+ *  ln -s /usr/share/nginx/www/test/app/vendor/mdn/mgrid/lib/Mgrid/templates/default/assets /usr/share/nginx/www/test/app/
  *  
- * also has to create one for the assets 
+ * Symlink for IMac
+ *     ln -s /var/www/mgrid /var/www/test/app/vendor/mdn/
  *      ln -s /var/www/test/app/vendor/mdn/mgrid/lib/Mgrid/templates/default/assets /var/www/test/app/
- *      ln -s /usr/share/nginx/www/test/app/vendor/mdn/mgrid/lib/Mgrid/templates/default/assets /usr/share/nginx/www/test/app/
+ *      
  */
 
 // show the grid

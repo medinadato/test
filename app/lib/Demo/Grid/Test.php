@@ -188,8 +188,19 @@ class Test extends \Mgrid\Grid
                 'balance' => '82458.12',
                 'statusId' => 2,
             ),
-            5 => array(
-                'id' => 6,
+//            5 => array(
+//                'id' => 6,
+//                'companyName' => 'Company 02',
+//                'roleName' => 'Role 02',
+//                'personName' => 'Mary Doe',
+//                'username' => 'marydue@mdnsolutions.com',
+//                'birthday' => '1955-06-10',
+//                'lastAccess' => '2012-08-09 12:15:13',
+//                'balance' => '82458.12',
+//                'statusId' => 2,
+//            ),
+            6 => array(
+                'id' => 7,
                 'companyName' => 'Company 02',
                 'roleName' => 'Role 02',
                 'personName' => 'Mary Doe',
@@ -199,8 +210,8 @@ class Test extends \Mgrid\Grid
                 'balance' => '82458.12',
                 'statusId' => 2,
             ),
-            6 => array(
-                'id' => 7,
+            7 => array(
+                'id' => 8,
                 'companyName' => 'Company 02',
                 'roleName' => 'Role 02',
                 'personName' => 'Mary Doe',
@@ -419,7 +430,6 @@ class Test extends \Mgrid\Grid
                 'balance' => '4263',
                 'statusId' => 1,
             ),
-            
             27 => array(
                 'id' => 28,
                 'companyName' => 'Company 01',
