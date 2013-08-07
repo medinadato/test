@@ -84,6 +84,10 @@ class Test extends \Mgrid\Grid
                 ->addColumn(array(
                     'label' => 'Username',
                     'index' => 'username',
+                    'render' => array(
+                        'type' => 'link',
+                        'href' => 'http://www.mdnsolutions.com',
+                    ),
                 ))
                 ->addColumn(array(
                     'label' => 'Birthday',
@@ -166,6 +170,7 @@ class Test extends \Mgrid\Grid
                         'delete' => '1',
                     ),
                 ));
+//                ->setFilter(false);
 //                ->setPager(false);
 //                ->setHeader(false);
 //                ->setOrder(false);
@@ -188,7 +193,7 @@ class Test extends \Mgrid\Grid
                 'username' => 'johndue@mdnsolutions.com',
                 'birthday' => '1986-01-03',
                 'lastAccess' => '2013-01-05 00:15:13',
-                'balance' => '158.12',
+                'balance' => '125.09',
                 'statusId' => 1,
             ),
             1 => array(
@@ -232,7 +237,7 @@ class Test extends \Mgrid\Grid
                 'username' => 'rduncan@mdnsolutions.com',
                 'birthday' => '1955-06-10',
                 'lastAccess' => '2012-08-09 12:15:13',
-                'balance' => '82458.12',
+                'balance' => '6858.12',
                 'statusId' => 2,
             ),
 //            5 => array(
@@ -248,13 +253,13 @@ class Test extends \Mgrid\Grid
 //            ),
             6 => array(
                 'id' => 7,
-                'companyName' => 'Company 02',
-                'roleName' => 'Role 02',
-                'personName' => 'Mary Doe',
-                'username' => 'marydue@mdnsolutions.com',
-                'birthday' => '1955-06-10',
-                'lastAccess' => '2012-08-09 12:15:13',
-                'balance' => '82458.12',
+                'companyName' => 'The Little Market',
+                'roleName' => 'Manager',
+                'personName' => 'Daniel Lima',
+                'username' => 'dlima@mdnsolutions.com',
+                'birthday' => '1969-12-10',
+                'lastAccess' => '2007-08-05 12:15:13',
+                'balance' => '2458.12',
                 'statusId' => 2,
             ),
             7 => array(
@@ -265,7 +270,7 @@ class Test extends \Mgrid\Grid
                 'username' => 'marydue@mdnsolutions.com',
                 'birthday' => '1955-06-10',
                 'lastAccess' => '2012-08-09 12:15:13',
-                'balance' => '82458.12',
+                'balance' => '7542.12',
                 'statusId' => 2,
             ),
             8 => array(
@@ -316,8 +321,8 @@ class Test extends \Mgrid\Grid
                 'id' => 13,
                 'companyName' => 'Cheettos',
                 'roleName' => 'Role 02',
-                'personName' => 'Mary Doe',
-                'username' => 'marydue@mdnsolutions.com',
+                'personName' => 'Vinicius Souza',
+                'username' => 'labuzin@mdnsolutions.com',
                 'birthday' => '1955-06-10',
                 'lastAccess' => '2012-08-09 12:15:13',
                 'balance' => '82458.12',
@@ -331,7 +336,7 @@ class Test extends \Mgrid\Grid
                 'username' => 'marydue@mdnsolutions.com',
                 'birthday' => '1955-06-10',
                 'lastAccess' => '2012-08-09 12:15:13',
-                'balance' => '82458.12',
+                'balance' => '82458.1',
                 'statusId' => 2,
             ),
             14 => array(
