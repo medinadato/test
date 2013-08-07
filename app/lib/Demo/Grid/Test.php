@@ -7,6 +7,11 @@ namespace Demo\Grid;
  */
 class Test extends \Mgrid\Grid
 {
+    /**
+     * Status 
+     */
+    const ENABLED = 1;
+    const DISABLED = 2;
 
     /**
      * It sets the grid properties
@@ -61,10 +66,11 @@ class Test extends \Mgrid\Grid
                 ->addColumn(array(
                     'label' => 'Balance',
                     'index' => 'balance',
+                    'align' => 'right',
                     'render' => array(
                         'type' => 'money',
                     ),
-                    'ordering' => false,
+                    'order' => false,
                     'filter' => array(
                         'render' => array(
                             'type' => 'number',
@@ -79,6 +85,7 @@ class Test extends \Mgrid\Grid
                 ->addColumn(array(
                     'label' => 'Birthday',
                     'index' => 'birthday',
+                    'align' => 'center',
                     'render' => 'date',
                     'filter' => array(
                         'render' => array(
@@ -102,33 +109,58 @@ class Test extends \Mgrid\Grid
                             ),
                         ),
                     ),
-//                    'condition' => function ($row) {
-//                        return ($row['statusId'] != 1);
-//                    },
                 ))
                 ->addAction(array(
                     'label' => 'Details',
-                    'controllerName' => 'access_user',
-                    'actionName' => 'detail',
-                    'pkIndex' => 'id',
+                    'href' => 'http://mgrid.mdnsolutions.com?your_action=details',
+                    'target' => '_blank',
+                    'params' => array(
+                        'myid' => 'id',
+                        ),
                     'cssClass' => 'view',
                 ))
                 ->addAction(array(
                     'label' => 'Edit',
-                    'controllerName' => 'access_user',
-                    'actionName' => 'edit',
-                    'pkIndex' => 'id',
+                    'href' => '?your_action=edit',
+                    'params' => array(
+                        'myid' => 'id',
+                        'edit' => 1,
+                        ),
+                ))
+                ->addAction(array(
+                    'label' => 'Disable Record',
+                    'href' => '?your_action=disable_status',
+                    'params' => array(
+                        'myid' => 'id',
+                        'disable' => 'yes',
+                        ),
+                    'condition' => function ($row) {
+                        return ($row['statusId'] == Test::ENABLED);
+                    },
+                ))
+                ->addAction(array(
+                    'label' => 'Enable Record',
+                    'href' => '?your_action=disable_status',
+                    'params' => array(
+                        'myid' => 'id',
+                        'enable' => 'yes',
+                        ),
+                    'condition' => function ($row) {
+                        return ($row['statusId'] == Test::DISABLED);
+                    },
                 ))
                 ->addAction(array(
                     'label' => 'Delete',
-                    'controllerName' => 'access_user',
-                    'actionName' => 'delete',
-                    'pkIndex' => 'id',
+                    'href' => '?your_action=delete',
                     'cssClass' => 'del',
+                    'params' => array(
+                        'myid' => 'id',
+                        'delete' => '1',
+                        ),
                 ));
 //                ->setPager(false);
-//                ->setHeaders(false);
-//                ->setOrdering(false);
+//                ->setHeader(false);
+//                ->setOrder(false);
     }
 
     /**
@@ -152,7 +184,7 @@ class Test extends \Mgrid\Grid
                 'statusId' => 1,
             ),
             1 => array(
-                'id' => 2,
+                'id' => 8,
                 'companyName' => 'Company 02',
                 'roleName' => 'Role 02',
                 'personName' => 'Mary Doe',
@@ -218,7 +250,7 @@ class Test extends \Mgrid\Grid
                 'statusId' => 2,
             ),
             7 => array(
-                'id' => 8,
+                'id' => 10,
                 'companyName' => 'Company 02',
                 'roleName' => 'Role 02',
                 'personName' => 'Mary Doe',
@@ -240,7 +272,7 @@ class Test extends \Mgrid\Grid
                 'statusId' => 2,
             ),
             9 => array(
-                'id' => 10,
+                'id' => 2,
                 'companyName' => 'Company 18',
                 'roleName' => 'Empresario',
                 'personName' => 'Marcelo Raposo',
@@ -306,7 +338,7 @@ class Test extends \Mgrid\Grid
                 'statusId' => 1,
             ),
             15 => array(
-                'id' => 16,
+                'id' => 20,
                 'companyName' => 'Company 02',
                 'roleName' => 'Role 02',
                 'personName' => 'Mary Doe',
@@ -350,7 +382,7 @@ class Test extends \Mgrid\Grid
                 'statusId' => 2,
             ),            
             19 => array(
-                'id' => 20,
+                'id' => 16,
                 'companyName' => 'Company 01',
                 'roleName' => 'Role 01',
                 'personName' => 'John Doe',
@@ -494,18 +526,18 @@ class Test extends \Mgrid\Grid
             ),
             32 => array(
                 'id' => 33,
-                'companyName' => 'Company 25',
+                'companyName' => 'Boomerang LTDA',
                 'roleName' => 'Employee',
-                'personName' => 'Anacleto',
-                'username' => 'anacleto@mdnsolutions.com',
-                'birthday' => '1991-09-01',
-                'lastAccess' => '2001-09-11 09:18:25',
-                'balance' => '4263',
+                'personName' => 'Matt John',
+                'username' => 'mjohn@mdnsolutions.com',
+                'birthday' => '1951-10-18',
+                'lastAccess' => '2012-11-11 09:18:58',
+                'balance' => '12.14',
                 'statusId' => 1,
             ),
             
             33 => array(
-                'id' => 34,
+                'id' => 37,
                 'companyName' => 'Company 25',
                 'roleName' => 'Employee',
                 'personName' => 'Anacleto',

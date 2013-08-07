@@ -8,7 +8,7 @@ $test_grid = new \Demo\Grid\Test;
 //unset($_SESSION);
 //echo "SESSION:
 //    ";
-//var_export($_SESSION);        
+//var_export($_SESSION);
 //echo "</pre>";
 //session_destroy();
 ?>
