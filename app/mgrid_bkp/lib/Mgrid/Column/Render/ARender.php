@@ -1,4 +1,5 @@
 <?php
+
 namespace Mgrid\Column\Render;
 
 /**
@@ -10,19 +11,34 @@ abstract class ARender implements IRender
 {
 
     /**
+     *
+     * @var type 
+     */
+    protected $config;
+
+    /**
      * row used by render
      * @var array
      */
     protected $row = array();
+
     /**
      * Column that uses the render
      * @var Mgrid\Column
      */
     protected $column = null;
+
     /**
      * render options
      */
     protected $options;
+    
+    /**
+     *
+     * @var string 
+     */
+    protected $prefix;
+    protected $suffix;
 
     /**
      * constructor may set options
@@ -30,8 +46,12 @@ abstract class ARender implements IRender
      */
     public function __construct(array $options = array())
     {
-	if (isset($options))
-	    $this->options = $options;
+        if (isset($options)) {
+            $this->options = $options;
+        }
+        
+        // pager
+        $this->config = \Mgrid\Config::getConfig('render');
     }
 
     /**
@@ -41,8 +61,8 @@ abstract class ARender implements IRender
      */
     public function setRow(array $row)
     {
-	$this->row = $row;
-	return $this;
+        $this->row = $row;
+        return $this;
     }
 
     /**
@@ -51,7 +71,7 @@ abstract class ARender implements IRender
      */
     public function getRow()
     {
-	return $this->row;
+        return $this->row;
     }
 
     /**
@@ -59,7 +79,7 @@ abstract class ARender implements IRender
      */
     public function getColumn()
     {
-	return $this->column;
+        return $this->column;
     }
 
     /**
@@ -69,8 +89,8 @@ abstract class ARender implements IRender
      */
     public function setColumn(\Mgrid\Column $column)
     {
-	$this->column = $column;
-	return $this;
+        $this->column = $column;
+        return $this;
     }
 
     /**
@@ -79,8 +99,9 @@ abstract class ARender implements IRender
      */
     public function getView()
     {
-	//get view
-	$viewRenderer = \Zend_Controller_Action_HelperBroker::getExistingHelper('ViewRenderer');
-	return $viewRenderer->view;        
+        //get view
+        $viewRenderer = \Zend_Controller_Action_HelperBroker::getExistingHelper('ViewRenderer');
+        return $viewRenderer->view;
     }
+
 }

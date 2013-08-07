@@ -10,6 +10,7 @@ class Test extends \Mgrid\Grid
     /**
      * Status 
      */
+
     const ENABLED = 1;
     const DISABLED = 2;
 
@@ -27,6 +28,10 @@ class Test extends \Mgrid\Grid
                 ->addColumn(array(
                     'label' => 'Cod.',
                     'index' => 'id',
+                    'render' => array(
+                        'type' => 'text',
+                        'prefix' => 'No. ',
+                    ),
                     'filter' => array(
                         'render' => array(
                             'type' => 'number',
@@ -67,9 +72,7 @@ class Test extends \Mgrid\Grid
                     'label' => 'Balance',
                     'index' => 'balance',
                     'align' => 'right',
-                    'render' => array(
-                        'type' => 'money',
-                    ),
+                    'render' => 'money',
                     'order' => false,
                     'filter' => array(
                         'render' => array(
@@ -97,15 +100,20 @@ class Test extends \Mgrid\Grid
                 ->addColumn(array(
                     'label' => 'Last access',
                     'index' => 'lastAccess',
+                    'render' => 'dateTime',
                 ))
                 ->addColumn(array(
                     'label' => 'Status',
                     'index' => 'statusId',
+                    'render' => 'EnableOrDisabled',
                     'filter' => array(
                         'render' => array(
                             'type' => 'select',
                             'attributes' => array(
-                                'multiOptions' => array(1 => 'Enable', 2 => 'Disabled'),
+                                'multiOptions' => array(
+                                    Test::ENABLED => 'Enable',
+                                    Test::DISABLED => 'Disabled',
+                                ),
                             ),
                         ),
                     ),
@@ -116,7 +124,7 @@ class Test extends \Mgrid\Grid
                     'target' => '_blank',
                     'params' => array(
                         'myid' => 'id',
-                        ),
+                    ),
                     'cssClass' => 'view',
                 ))
                 ->addAction(array(
@@ -125,7 +133,7 @@ class Test extends \Mgrid\Grid
                     'params' => array(
                         'myid' => 'id',
                         'edit' => 1,
-                        ),
+                    ),
                 ))
                 ->addAction(array(
                     'label' => 'Disable Record',
@@ -133,7 +141,7 @@ class Test extends \Mgrid\Grid
                     'params' => array(
                         'myid' => 'id',
                         'disable' => 'yes',
-                        ),
+                    ),
                     'condition' => function ($row) {
                         return ($row['statusId'] == Test::ENABLED);
                     },
@@ -144,7 +152,7 @@ class Test extends \Mgrid\Grid
                     'params' => array(
                         'myid' => 'id',
                         'enable' => 'yes',
-                        ),
+                    ),
                     'condition' => function ($row) {
                         return ($row['statusId'] == Test::DISABLED);
                     },
@@ -156,7 +164,7 @@ class Test extends \Mgrid\Grid
                     'params' => array(
                         'myid' => 'id',
                         'delete' => '1',
-                        ),
+                    ),
                 ));
 //                ->setPager(false);
 //                ->setHeader(false);
@@ -380,7 +388,7 @@ class Test extends \Mgrid\Grid
                 'lastAccess' => '2012-08-09 12:15:13',
                 'balance' => '82458.12',
                 'statusId' => 2,
-            ),            
+            ),
             19 => array(
                 'id' => 16,
                 'companyName' => 'Company 01',
@@ -535,7 +543,6 @@ class Test extends \Mgrid\Grid
                 'balance' => '12.14',
                 'statusId' => 1,
             ),
-            
             33 => array(
                 'id' => 37,
                 'companyName' => 'Company 25',
